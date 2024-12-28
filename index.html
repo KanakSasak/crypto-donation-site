@@ -8,197 +8,186 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 20px;
             background: #f5f5f5;
-            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
         }
 
         h1 {
             color: #444;
-            font-size: 2em;
+            font-size: 1.8em;
+            margin-bottom: 10px;
         }
 
         p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
+            font-size: 1em;
+            margin-bottom: 10px;
         }
 
         .donation-container {
-            margin: 20px auto;
-            max-width: 600px;
+            margin: auto;
+            max-width: 90%;
             background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .crypto-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            background: #007BFF;
-            padding: 10px;
-        }
-
-        .crypto-tab {
-            padding: 10px;
-            cursor: pointer;
             border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 85vh;
+        }
+
+        .tabs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            padding: 10px;
+            background: #007BFF;
+        }
+
+        .tab {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
             background: #fff;
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, background 0.3s;
+            border-radius: 5px;
+            transition: background 0.3s;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            height: 60px;
         }
 
-        .crypto-tab img {
-            width: 40px;
-            height: 40px;
-            display: block;
-            margin: 0 auto;
+        .tab img {
+            max-width: 30px;
+            max-height: 30px;
+            margin-right: 5px;
         }
 
-        .crypto-tab:hover,
-        .crypto-tab.active {
-            transform: scale(1.1);
-            background: #f0f0f0;
+        .tab:hover,
+        .tab.active {
+            background: #0056b3;
+            color: #fff;
         }
 
         .tab-content {
             display: none;
-            padding: 20px;
+            padding: 10px;
+            flex-grow: 1;
         }
 
         .tab-content.active {
-            display: block;
-        }
-
-        .qr-code {
-            margin: 20px 0;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .qr-code img {
-            max-width: 200px;
+            max-width: 150px;
         }
 
         .address {
             font-family: monospace;
-            font-size: 0.9em;
+            font-size: 1em;
             background: #f3f3f3;
-            padding: 10px;
+            padding: 5px;
             border-radius: 5px;
             word-break: break-word;
+            max-width: 90%;
+            text-align: center;
+            margin-top: 5px;
         }
 
         footer {
-            margin-top: 30px;
-            font-size: 0.9em;
+            font-size: 0.8em;
             color: #666;
+            padding: 5px;
+            background: #007BFF;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <h1>Support My Work with Crypto</h1>
-    <p>If you enjoy my content, you can support me by donating cryptocurrency. Choose on a crypto icon below to view wallet information.</p>
+    <h1>Donate Crypto to Support Us</h1>
+    <p>Select your preferred cryptocurrency below to view details:</p>
 
     <div class="donation-container">
-        <div class="crypto-grid">
-            <div class="crypto-tab active" data-tab="bitcoin">
-                <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin">
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab active" data-tab="bitcoin">
+                <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin Icon">
+                Bitcoin
             </div>
-            <div class="crypto-tab" data-tab="ethereum">
-                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum">
+            <div class="tab" data-tab="ethereum">
+                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum Icon">
+                Ethereum
             </div>
-            <div class="crypto-tab" data-tab="litecoin">
-                <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.png" alt="Litecoin">
+            <div class="tab" data-tab="binance">
+                <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" alt="Binance Icon">
+                Binance
             </div>
-            <div class="crypto-tab" data-tab="solana">
-                <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana">
+            <div class="tab" data-tab="solana">
+                <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana Icon">
+                Solana
             </div>
-            <div class="crypto-tab" data-tab="polygon">
-                <img src="https://cryptologos.cc/logos/polygon-matic-logo.png" alt="Polygon">
+            <div class="tab" data-tab="tether">
+                <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="Tether Icon">
+                Tether
             </div>
-            <div class="crypto-tab" data-tab="cosmos">
-                <img src="https://cryptologos.cc/logos/cosmos-atom-logo.png" alt="Cosmos">
-            </div>
-            <div class="crypto-tab" data-tab="cardano">
-                <img src="https://cryptologos.cc/logos/cardano-ada-logo.png" alt="Cardano">
-            </div>
-            <div class="crypto-tab" data-tab="binance">
-                <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" alt="Binance">
+            <div class="tab" data-tab="dogecoin">
+                <img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png" alt="Dogecoin Icon">
+                Dogecoin
             </div>
         </div>
 
-        <!-- Tab Contents -->
+        <!-- Tab Content -->
         <div class="tab-content active" id="bitcoin">
-            <h2>Donate Bitcoin</h2>
-            <p>Scan the QR code or copy the wallet address below:</p>
+            <h2>Donate Bitcoin (BTC)</h2>
             <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=bitcoin:YOUR_BITCOIN_ADDRESS" alt="Bitcoin QR Code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=bitcoin:YOUR_BITCOIN_ADDRESS" alt="Bitcoin QR Code">
             </div>
             <div class="address">YOUR_BITCOIN_ADDRESS</div>
         </div>
 
         <div class="tab-content" id="ethereum">
-            <h2>Donate Ethereum</h2>
-            <p>Scan the QR code or copy the wallet address below:</p>
+            <h2>Donate Ethereum (ETH)</h2>
             <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=ethereum:YOUR_ETHEREUM_ADDRESS" alt="Ethereum QR Code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=ethereum:YOUR_ETHEREUM_ADDRESS" alt="Ethereum QR Code">
             </div>
             <div class="address">YOUR_ETHEREUM_ADDRESS</div>
         </div>
 
-        <div class="tab-content" id="litecoin">
-            <h2>Donate Litecoin</h2>
-            <p>Scan the QR code or copy the wallet address below:</p>
+        <div class="tab-content" id="binance">
+            <h2>Donate Binance (BNB)</h2>
             <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=litecoin:YOUR_LITECOIN_ADDRESS" alt="Litecoin QR Code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=binance:YOUR_BINANCE_ADDRESS" alt="Binance QR Code">
             </div>
-            <div class="address">YOUR_LITECOIN_ADDRESS</div>
+            <div class="address">YOUR_BINANCE_ADDRESS</div>
         </div>
 
         <div class="tab-content" id="solana">
-            <h2>Donate Solana</h2>
-            <p>Scan the QR code or copy the wallet address below:</p>
+            <h2>Donate Solana (SOL)</h2>
             <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=solana:YOUR_SOLANA_ADDRESS" alt="Solana QR Code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=solana:YOUR_SOLANA_ADDRESS" alt="Solana QR Code">
             </div>
             <div class="address">YOUR_SOLANA_ADDRESS</div>
         </div>
 
-        <div class="tab-content" id="polygon">
-            <h2>Donate Polygon</h2>
-            <p>Scan the QR code or copy the wallet address below:</p>
+        <div class="tab-content" id="tether">
+            <h2>Donate Tether (USDT)</h2>
             <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=polygon:YOUR_POLYGON_ADDRESS" alt="Polygon QR Code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=tether:YOUR_TETHER_ADDRESS" alt="Tether QR Code">
             </div>
-            <div class="address">YOUR_POLYGON_ADDRESS</div>
+            <div class="address">YOUR_TETHER_ADDRESS</div>
         </div>
 
-        <div class="tab-content" id="cosmos">
-            <h2>Donate Cosmos</h2>
-            <p>Scan the QR code or copy the wallet address below:</p>
+        <div class="tab-content" id="dogecoin">
+            <h2>Donate Dogecoin (DOGE)</h2>
             <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=cosmos:YOUR_COSMOS_ADDRESS" alt="Cosmos QR Code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=dogecoin:YOUR_DOGECOIN_ADDRESS" alt="Dogecoin QR Code">
             </div>
-            <div class="address">YOUR_COSMOS_ADDRESS</div>
-        </div>
-
-        <div class="tab-content" id="cardano">
-            <h2>Donate Cardano</h2>
-            <p>Scan the QR code or copy the wallet address below:</p>
-            <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=cardano:YOUR_CARDANO_ADDRESS" alt="Cardano QR Code">
-            </div>
-            <div class="address">YOUR_CARDANO_ADDRESS</div>
-        </div>
-
-        <div class="tab-content" id="binance">
-            <h2>Donate Binance</h2>
-            <p>Scan the QR code or copy the wallet address below:</p>
-            <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=binance:YOUR_BINANCE_ADDRESS" alt="Binance QR Code">
-            </div>
-            <div class="address">YOUR_BINANCE_ADDRESS</div>
+            <div class="address">YOUR_DOGECOIN_ADDRESS</div>
         </div>
     </div>
 
@@ -208,7 +197,7 @@
 
     <script>
         // JavaScript to handle tab switching
-        const tabs = document.querySelectorAll('.crypto-tab');
+        const tabs = document.querySelectorAll('.tab');
         const tabContents = document.querySelectorAll('.tab-content');
 
         tabs.forEach(tab => {
