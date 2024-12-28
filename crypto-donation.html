@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Crypto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        h1 {
+            color: #444;
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .donation-container {
+            margin: 20px auto;
+            max-width: 600px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .crypto-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            background: #007BFF;
+            padding: 10px;
+        }
+
+        .crypto-tab {
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .crypto-tab img {
+            width: 40px;
+            height: 40px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .crypto-tab:hover,
+        .crypto-tab.active {
+            transform: scale(1.1);
+            background: #f0f0f0;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .qr-code {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .qr-code img {
+            max-width: 200px;
+        }
+
+        .address {
+            font-family: monospace;
+            font-size: 0.9em;
+            background: #f3f3f3;
+            padding: 10px;
+            border-radius: 5px;
+            word-break: break-word;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Support My Work with Crypto</h1>
+    <p>If you enjoy my content, you can support me by donating cryptocurrency. Click on a crypto icon below to view wallet information.</p>
+
+    <div class="donation-container">
+        <div class="crypto-grid">
+            <div class="crypto-tab active" data-tab="bitcoin">
+                <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin">
+            </div>
+            <div class="crypto-tab" data-tab="ethereum">
+                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum">
+            </div>
+            <div class="crypto-tab" data-tab="litecoin">
+                <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.png" alt="Litecoin">
+            </div>
+            <div class="crypto-tab" data-tab="solana">
+                <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana">
+            </div>
+            <div class="crypto-tab" data-tab="polygon">
+                <img src="https://cryptologos.cc/logos/polygon-matic-logo.png" alt="Polygon">
+            </div>
+            <div class="crypto-tab" data-tab="cosmos">
+                <img src="https://cryptologos.cc/logos/cosmos-atom-logo.png" alt="Cosmos">
+            </div>
+            <div class="crypto-tab" data-tab="cardano">
+                <img src="https://cryptologos.cc/logos/cardano-ada-logo.png" alt="Cardano">
+            </div>
+            <div class="crypto-tab" data-tab="binance">
+                <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" alt="Binance">
+            </div>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-content active" id="bitcoin">
+            <h2>Donate Bitcoin</h2>
+            <p>Scan the QR code or copy the wallet address below:</p>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=bitcoin:YOUR_BITCOIN_ADDRESS" alt="Bitcoin QR Code">
+            </div>
+            <div class="address">YOUR_BITCOIN_ADDRESS</div>
+        </div>
+
+        <div class="tab-content" id="ethereum">
+            <h2>Donate Ethereum</h2>
+            <p>Scan the QR code or copy the wallet address below:</p>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=ethereum:YOUR_ETHEREUM_ADDRESS" alt="Ethereum QR Code">
+            </div>
+            <div class="address">YOUR_ETHEREUM_ADDRESS</div>
+        </div>
+
+        <div class="tab-content" id="litecoin">
+            <h2>Donate Litecoin</h2>
+            <p>Scan the QR code or copy the wallet address below:</p>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=litecoin:YOUR_LITECOIN_ADDRESS" alt="Litecoin QR Code">
+            </div>
+            <div class="address">YOUR_LITECOIN_ADDRESS</div>
+        </div>
+
+        <div class="tab-content" id="solana">
+            <h2>Donate Solana</h2>
+            <p>Scan the QR code or copy the wallet address below:</p>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=solana:YOUR_SOLANA_ADDRESS" alt="Solana QR Code">
+            </div>
+            <div class="address">YOUR_SOLANA_ADDRESS</div>
+        </div>
+
+        <div class="tab-content" id="polygon">
+            <h2>Donate Polygon</h2>
+            <p>Scan the QR code or copy the wallet address below:</p>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=polygon:YOUR_POLYGON_ADDRESS" alt="Polygon QR Code">
+            </div>
+            <div class="address">YOUR_POLYGON_ADDRESS</div>
+        </div>
+
+        <div class="tab-content" id="cosmos">
+            <h2>Donate Cosmos</h2>
+            <p>Scan the QR code or copy the wallet address below:</p>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=cosmos:YOUR_COSMOS_ADDRESS" alt="Cosmos QR Code">
+            </div>
+            <div class="address">YOUR_COSMOS_ADDRESS</div>
+        </div>
+
+        <div class="tab-content" id="cardano">
+            <h2>Donate Cardano</h2>
+            <p>Scan the QR code or copy the wallet address below:</p>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=cardano:YOUR_CARDANO_ADDRESS" alt="Cardano QR Code">
+            </div>
+            <div class="address">YOUR_CARDANO_ADDRESS</div>
+        </div>
+
+        <div class="tab-content" id="binance">
+            <h2>Donate Binance</h2>
+            <p>Scan the QR code or copy the wallet address below:</p>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=binance:YOUR_BINANCE_ADDRESS" alt="Binance QR Code">
+            </div>
+            <div class="address">YOUR_BINANCE_ADDRESS</div>
+        </div>
+    </div>
+
+    <footer>
+        Thank you for your support! 🌟
+    </footer>
+
+    <script>
+        // JavaScript to handle tab switching
+        const tabs = document.querySelectorAll('.crypto-tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(tc => tc.classList.remove('active'));
+
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
